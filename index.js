@@ -1,6 +1,7 @@
 //Importa os algoritmos
 const binarySearch = require("./algorithms/binarySearch");
 const quickSort = require("./algorithms/quickSort");
+const HashTable = require("./structures/hashTable")
 
 //Define uma lista prévia
 const lista = [12, 3, 2, 5, 74, 9, 11, 13]
@@ -16,3 +17,12 @@ console.log("Lista Ordenada:", listaOrdenada)
 const resultado = binarySearch(listaOrdenada, 5)
 
 console.log("Resultado da busca:", resultado)
+
+const tabela = new HashTable()
+
+tabela.inserir("Raphael", 18)
+tabela.inserir("Pedro", 13)
+tabela.inserir("José", 83)
+
+console.log(tabela.buscar("Raphael"))
+console.log(tabela.buscar("José"))
