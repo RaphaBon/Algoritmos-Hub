@@ -18,7 +18,21 @@ function bfs(grafo, inicio, objetivo){
     // Enquanto a fila nao estiver vazia
     while(!fila.estaVazia()){
 
-            // Remove o primeiro elemento da fila.
+            // Remove o primeiro elemento da fila e marca que estamos nele, ex:
+                /**
+                 * grafo = []
+                 * grafo["Raphael"] = ["Julia", "Pedro"]
+                 * grafo["Julia"] = ["Marcos"]
+                 * 
+                 * Se passarmos: bfs(grafo, Raphael, Marcos) 
+                 *  teremos:
+                 *      fila: [Raphael]
+                 *      const atual = fila.desenfileirar()
+                 *      fila: []
+                 *      atual = "Raphael"   
+                 */
+
+
             const atual = fila.desenfileirar()
 
             // Se o atual  for o objetivo:
@@ -30,12 +44,12 @@ function bfs(grafo, inicio, objetivo){
                 // Essa variável vai armazenar os nós do final para o começo
                 let passo = objetivo
 
-                while(passo){   //Enquanto o objetivo  ainda estiver na lista
+                while(passo){   //Enquanto o objetivo  ainda estiver na fila
 
-                    //Remove da fila o objetivo  e salva no inicio do array
+                    //Remove da fila o objetivo (Marcos) e salva no inicio do array. Ficando: ["Marcos"]
                     caminho.unshift(passo)
 
-                    //E passa o anterior do objetivo, neste caso é Raphael
+                    //E passa o anterior do objetivo, neste caso é Raphael. Ficando: ["Raphael", "Marcos"]
                     passo = anterior[passo]
                 }  
                 //Retorna todo o caminho

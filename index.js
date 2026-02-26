@@ -3,6 +3,7 @@ const binarySearch = require("./algorithms/binarySearch");
 const quickSort = require("./algorithms/quickSort");
 const Fila = require("./algorithms/queue")
 const bfs = require("./algorithms/bfs")
+const dfs = require("./algorithms/dfs")
 
 // Importa data structures
 const HashTable = require("./structures/hashTable")
@@ -84,3 +85,9 @@ console.log()
 // Testing bfs
 const caminho = bfs(grafo, "Raphael", "Ana")
 console.log(caminho)
+
+console.log()
+console.log("---------------- TESTANDO DFS -------------------")
+console.log()
+
+console.log(dfs(grafo, "Raphael", "Ana"))
