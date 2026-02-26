@@ -4,6 +4,7 @@ const quickSort = require("./algorithms/quickSort");
 const Fila = require("./algorithms/queue")
 const bfs = require("./algorithms/bfs")
 const dfs = require("./algorithms/dfs")
+const dijkstra = require("./algorithms/dijkstra")
 
 // Importa data structures
 const HashTable = require("./structures/hashTable")
@@ -91,3 +92,28 @@ console.log("---------------- TESTANDO DFS -------------------")
 console.log()
 
 console.log(dfs(grafo, "Raphael", "Ana"))
+
+console.log()
+console.log("---------------- TESTANDO DIJKSTRA -------------------")
+console.log()
+
+const grafoDijkstra = {}
+
+grafoDijkstra["Raphael"] = {
+    Pedro: 6,
+    Lucas: 9,
+}
+
+grafoDijkstra["Pedro"] = {
+    Marcos: 4
+}
+
+grafoDijkstra["Lucas"] = {
+    Marcos: 10
+}
+
+grafoDijkstra["Marcos"] = {}
+
+const caminhoDijkstra = dijkstra(grafoDijkstra, "Raphael", "Marcos")
+
+console.log(caminhoDijkstra)
