@@ -5,6 +5,8 @@ const Fila = require("./algorithms/queue")
 const bfs = require("./algorithms/bfs")
 const dfs = require("./algorithms/dfs")
 const dijkstra = require("./algorithms/dijkstra")
+const greedy = require("./algorithms/greedy")
+const knn = require("./algorithms/knn")
 
 // Importa data structures
 const HashTable = require("./structures/hashTable")
@@ -117,3 +119,41 @@ grafoDijkstra["Marcos"] = {}
 const caminhoDijkstra = dijkstra(grafoDijkstra, "Raphael", "Marcos")
 
 console.log(caminhoDijkstra)
+
+console.log()
+console.log("---------------- TESTANDO GREEDY -------------------")
+console.log()
+
+const estadosNecessarios = new Set(["SP", "MG", "RJ", "PR", "RS", "SC"])
+
+const estacoes = {
+    "k1": new Set(["SP","MG","RJ"]),
+    "k2": new Set(["MG","PR"]),
+    "k3": new Set(["SP","SC"]),
+    "k4": new Set(["PR","RS"]),
+    "k5": new Set(["RJ","SC"])    
+}
+
+console.log("Greedy: ", greedy(estadosNecessarios, estacoes))
+
+console.log()
+console.log("---------------- TESTANDO KNN -------------------")
+console.log()
+
+const dados = [
+    [5,1],
+    [4,2],
+    [1,5],
+    [2,4]
+]
+
+const rotulos = [
+    "Gostou",
+    "Gostou",
+    "NaoGostou",
+    "NaoGostou"
+]
+
+console.log(
+    knn(dados,rotulos,[4,1],3)
+)
